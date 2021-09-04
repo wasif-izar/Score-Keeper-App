@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="@color/court"
+    android:fillViewport="true"
+    android:padding="10dp"
+    tools:context=".GameFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/gamefrag_tv_team1_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/placeholder_team_name"
+            android:textAlignment="center"
+            android:textColor="@color/team1"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/gamefrag_bt_team1_freethrow"
+            app:layout_constraintStart_toStartOf="@+id/gamefrag_bt_team1_freethrow"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.00" />
+
+        <TextView
+            android:id="@+id/gamefrag_tv_team2_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/placeholder_team_name"
+            android:textColor="@color/team2"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/gamefrag_bt_team2_freethrow"
+            app:layout_constraintStart_toStartOf="@+id/gamefrag_bt_team2_freethrow"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.00"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/gamefrag_tv_team1_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/placeholder_score"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="72sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/gamefrag_bt_team1_freethrow"
+            app:layout_constraintStart_toStartOf="@+id/gamefrag_bt_team1_freethrow"
+            app:layout_constraintTop_toBottomOf="@+id/gamefrag_tv_team1_name"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/gamefrag_tv_team2_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/placeholder_score"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="72sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/gamefrag_bt_team2_freethrow"
+            app:layout_constraintStart_toStartOf="@+id/gamefrag_bt_team2_freethrow"
+            app:layout_constraintTop_toBottomOf="@+id/gamefrag_tv_team2_name"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:checkedButton="@id/gamefrag_rv_q1"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gamefrag_tv_team2_score"
+            app:layout_constraintVertical_bias="0.01">
+
+            <RadioButton
+                android:id="@+id/gamefrag_rv_q1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/squada_one"
+                android:text="@string/q1"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/gamefrag_rv_q2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/squada_one"
+                android:text="@string/q2"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/gamefrag_rv_q3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/squada_one"
+                android:text="@string/q3"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/gamefrag_rv_q4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/squada_one"
+                android:text="@string/q4"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/gamefrag_tv_team1_q1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:fontFamily="@font/squada_one"
+            android:paddingTop="10dp"
+            android:text="@string/placeholder_score"
+            android:textAlignment="center"
+            android:textColor="@color/team1"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gamefrag_tv_team1_q2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/gamefrag_tv_team1_q2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:fontFamily="@font/squada_one"
+            android:paddingTop="10dp"
+            android:text="@string/placeholder_score"
+            android:textAlignment="center"
+            android:textColor="@color/team1"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gamefrag_tv_team1_q1"
+            app:layout_constraintEnd_toStartOf="@+id/gamefrag_tv_team1_q3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/gamefrag_tv_team1_q1"
+            app:layout_constraintTop_toTopOf="@+id/gamefrag_tv_team1_q1"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/gamefrag_tv_team1_q3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:fontFamily="@font/squada_one"
+            android:paddingTop="10dp"
+            android:text="@string/placeholder_score"
+            android:textAlignment="center"
+            android:textColor="@color/team1"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gamefrag_tv_team1_q2"
+            app:layout_constraintEnd_toStartOf="@+id/gamefrag_tv_team1_q4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/gamefrag_tv_team1_q2"
+            app:layout_constraintTop_toTopOf="@+id/gamefrag_tv_team1_q2"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/gamefrag_tv_team1_q4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:fontFamily="@font/squada_one"
+            android:paddingTop="10dp"
+            android:text="@string/placeholder_score"
+            android:textAlignment="center"
+            android:textColor="@color/team1"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gamefrag_tv_team1_q3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/gamefrag_tv_team1_q3"
+            app:layout_constraintTop_toTopOf="@+id/gamefrag_tv_team1_q3"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/gamefrag_tv_team2_q1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:fontFamily="@font/squada_one"
+            android:paddingTop="10dp"
+            android:text="@string/placeholder_score"
+            android:textAlignment="center"
+            android:textColor="@color/team2"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gamefrag_tv_team2_q2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gamefrag_tv_team1_q1"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/gamefrag_tv_team2_q2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:fontFamily="@font/squada_one"
+            android:paddingTop="10dp"
+            android:text="@string/placeholder_score"
+            android:textAlignment="center"
+            android:textColor="@color/team2"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gamefrag_tv_team2_q1"
+            app:layout_constraintEnd_toStartOf="@+id/gamefrag_tv_team2_q3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/gamefrag_tv_team2_q1"
+            app:layout_constraintTop_toTopOf="@+id/gamefrag_tv_team2_q1"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/gamefrag_tv_team2_q3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:fontFamily="@font/squada_one"
+            android:paddingTop="10dp"
+            android:text="@string/placeholder_score"
+            android:textAlignment="center"
+            android:textColor="@color/team2"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gamefrag_tv_team2_q2"
+            app:layout_constraintEnd_toStartOf="@+id/gamefrag_tv_team2_q4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/gamefrag_tv_team2_q2"
+            app:layout_constraintTop_toTopOf="@+id/gamefrag_tv_team2_q2"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/gamefrag_tv_team2_q4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:fontFamily="@font/squada_one"
+            android:paddingTop="10dp"
+            android:text="@string/placeholder_score"
+            android:textAlignment="center"
+            android:textColor="@color/team2"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gamefrag_tv_team2_q3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/gamefrag_tv_team2_q3"
+            app:layout_constraintTop_toTopOf="@+id/gamefrag_tv_team2_q3"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/gamefrag_tv_percent_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/percent_header"
+            android:textAlignment="center"
+            android:textColor="@color/ewing"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/gamefrag_tv_team1_percent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gamefrag_tv_team2_q1" />
+
+        <TextView
+            android:id="@+id/gamefrag_tv_team1_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/placeholder_percent"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/gamefrag_bt_team1_freethrow"
+            app:layout_constraintEnd_toEndOf="@+id/gamefrag_bt_team1_freethrow"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/gamefrag_bt_team1_freethrow"
+            app:layout_constraintTop_toBottomOf="@+id/gamefrag_tv_percent_header" />
+
+        <TextView
+            android:id="@+id/gamefrag_tv_team2_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/placeholder_percent"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gamefrag_tv_team1_percent"
+            app:layout_constraintEnd_toEndOf="@+id/gamefrag_bt_team2_freethrow"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="@+id/gamefrag_bt_team2_freethrow"
+            app:layout_constraintTop_toTopOf="@+id/gamefrag_tv_team1_percent" />
+
+        <Button
+            android:id="@+id/gamefrag_bt_team1_freethrow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/team1"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/btn_ft"
+            android:textSize="18sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/gamefrag_bt_team2_2pt"
+            app:layout_constraintEnd_toStartOf="@+id/gamefrag_bt_team2_freethrow"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gamefrag_tv_team1_percent"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/gamefrag_bt_team2_freethrow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/team2"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/btn_ft"
+            android:textSize="18sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/gamefrag_bt_team1_freethrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/gamefrag_bt_team1_freethrow"
+            app:layout_constraintTop_toTopOf="@+id/gamefrag_bt_team1_freethrow"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/gamefrag_bt_team1_2pt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/team1"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/btn_2pt"
+            android:textSize="18sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/gamefrag_bt_team2_2pt"
+            app:layout_constraintEnd_toStartOf="@+id/gamefrag_bt_team2_2pt"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gamefrag_bt_team2_2pt"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/gamefrag_bt_team2_3pt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/team2"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/btn_3pt"
+            android:textSize="18sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/gamefrag_bt_team1_3pt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/gamefrag_bt_team1_3pt"
+            app:layout_constraintTop_toTopOf="@+id/gamefrag_bt_team1_3pt"
+            tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/gamefrag_bt_team1_3pt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/team1"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/btn_3pt"
+            android:textSize="18sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/gamefrag_bt_team2_miss"
+            app:layout_constraintEnd_toStartOf="@+id/gamefrag_bt_team2_3pt"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gamefrag_bt_team2_2pt" />
+
+        <Button
+            android:id="@+id/gamefrag_bt_team1_miss"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/team1"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/btn_miss"
+            android:textSize="18sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/gamefrag_bt_team2_miss"
+            app:layout_constraintEnd_toStartOf="@+id/gamefrag_bt_team2_miss"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gamefrag_bt_team2_miss"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/gamefrag_bt_team2_2pt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/team2"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/btn_2pt"
+            android:textSize="18sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/gamefrag_bt_team1_3pt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/gamefrag_bt_team1_2pt"
+            app:layout_constraintTop_toBottomOf="@+id/gamefrag_bt_team1_freethrow"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/gamefrag_bt_team2_miss"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/team2"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/btn_miss"
+            android:textSize="18sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/gamefrag_bt_end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/gamefrag_bt_team1_miss"
+            app:layout_constraintTop_toBottomOf="@+id/gamefrag_bt_team1_3pt"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/gamefrag_bt_end"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/ewing"
+            android:fontFamily="@font/squada_one"
+            android:text="@string/btn_end"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gamefrag_bt_team2_miss"
+            tools:ignore="TextContrastCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
