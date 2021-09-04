@@ -1,6 +1,6 @@
 # ScoreKeeper
  ### Beautiful Score keeper app Where we can track the score and know the winner
- 
+  <br />
  
  <p align="center">
   <img src="https://user-images.githubusercontent.com/81978998/132099033-af1c96ff-28b7-4e9e-bcbc-5ab9e2afbc5b.png" width="240">
